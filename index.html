@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Tiwari Fitness - Premium Gym Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #ff6b00;
+            --primary-dark: #e05a00;
+            --secondary: #00a8cc;
+            --dark: #121212;
+            --light: #f8f9fa;
+            --gray: #333333;
+            --light-gray: #e0e0e0;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--light);
+            background-color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            color: var(--light);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo i {
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin: 0 12px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.6);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            color: var(--light);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 107, 0, 0.1), rgba(0, 168, 204, 0.1));
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding-top: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 span {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--light-gray);
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .secondary-button {
+            background-color: transparent;
+            color: white;
+            border: 2px solid var(--primary);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 14px;
+        }
+
+        .secondary-button:hover {
+            background-color: var(--primary);
+        }
+
+        .stats {
+            display: flex;
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            justify-content: space-around;
+            background-color: rgba(18, 18, 18, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 1000px;
+            margin: 0 auto;
+            z-index: 2;
+            border: 1px solid rgba(255, 107, 0, 0.2);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            color: var(--light-gray);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, var(--dark), #1a1a1a);
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary);
+            border-radius: 10px;
+            top: -20px;
+            left: -20px;
+            z-index: -1;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .section-header {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--light);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: var(--light-gray);
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-top: 20px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover fixed;
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(18, 18, 18, 0.9);
+        }
+
+        .services .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .services .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 107, 0, 0.1);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 107, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .service-content p {
+            color: var(--light-gray);
+            margin-bottom: 20px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #1a1a1a, var(--dark));
+        }
+
+        .pricing .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
+        }
+
+        .pricing-card.featured::before {
+            content: 'PRINCE\'S CHOICE';
+            position: absolute;
+            top: 15px;
+            right: -35px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--light-gray);
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-gray);
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .features li i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover fixed;
+        }
+
+        .testimonials .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .testimonials .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(42, 42, 42, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 107, 0, 0.2);
+        }
+
+        .testimonial-card .quote {
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.3;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--light-gray);
+        }
+
+        .client {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .client-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .client-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .client-info p {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #2a2a2a;
+            border-radius: 50%;
+            color: var(--light);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .about-image::before {
+                top: -10px;
+                left: -10px;
+            }
+            
+            .stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .stat-item {
+                flex: 1 1 40%;
+                margin-bottom: 10px;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgba(18, 18, 18, 0.95);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav li {
+                margin: 10px 0;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+            
+            .testimonial-card {
+                padding: 20px;
+            }
+        }
+
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-dumbbell"></i>
+                <h1>EliteFitness-By Prince</h1>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Prince</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <button class="cta-button">Join Now</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <h2>Transform Your Body with <span>Prince Tiwari</span></h2>
+                <p>EliteFitness-By Prince offers state-of-the-art facilities, personalized training programs, and expert guidance to help you achieve your fitness goals. Join our community today and start your transformation journey.</p>
+                <div class="hero-buttons">
+                    <button class="cta-button">Get Started</button>
+                    <button class="secondary-button">Book a Tour</button>
+                </div>
+            </div>
+        </div>
+        <div class="container stats animate-on-scroll">
+            <div class="stat-item">
+                <h3>12+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>5K+</h3>
+                <p>Members</p>
+            </div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>Expert Trainers</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Open Access</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-image animate-on-scroll">
+                    <img src="Profile.jpeg" alt="Prince Tiwari">
+                </div>
+                <div class="about-content animate-on-scroll">
+                    <div class="section-header">
+                        <p class="section-subtitle">Meet The Founder</p>
+                        <h2 class="section-title">Prince Tiwari</h2>
+                    </div>
+                    <p>Prince Tiwari is a certified fitness expert with over 2 years of experience in the fitness industry. His journey began with a passion for transforming lives through health and wellness.</p>
+                    <p>As the founder of EliteFitness-By Prince, he has created a world-class facility that combines cutting-edge equipment with personalized training methodologies.</p>
+                    <p>Prince believes in a holistic approach to fitness, focusing not just on physical strength but also on mental wellbeing and nutritional balance.</p>
+                    <p>"My mission is to empower every individual to become the best version of themselves."</p>
+                    <div class="signature">Prince Tiwari</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">What We Offer</p>
+                <h2 class="section-title">Premium Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Strength Training</h3>
+                        <p>Build muscle and increase strength with Prince's signature weight training programs and equipment.</p>
+                        <button class="secondary-button">Learn More</button>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Cardio Fitness</h3>
+                        <p>Improve cardiovascular health with our range of treadmills, ellipticals, and cycling machines.</p>
+                        <button class="secondary-button">Learn More</button>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Group Classes</h3>
+                        <p>Join our exciting group classes including HIIT, yoga, spinning, Zumba, and more.</p>
+                        <button class="secondary-button">Learn More</button>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Nutrition Plans</h3>
+                        <p>Personalized nutrition counseling and meal plans designed by Prince Tiwari himself.</p>
+                        <button class="secondary-button">Learn More</button>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Personal Training</h3>
+                        <p>One-on-one sessions with Prince Tiwari and his team of certified trainers.</p>
+                        <button class="secondary-button">Learn More</button>
+                    </div>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Recovery & Wellness</h3>
+                        <p>Massage therapy, cryotherapy, and sauna facilities to help your body recover.</p>
+                        <button class="secondary-button">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Choose Your Plan</p>
+                <h2 class="section-title">Membership Plans</h2>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card animate-on-scroll">
+                    <h3>Basic</h3>
+                    <div class="price">₹4500rs<span>/month</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Gym Access</li>
+                        <li><i class="fas fa-check"></i> Free Weights Area</li>
+                        <li><i class="fas fa-times"></i> Group Classes</li>
+                        <li><i class="fas fa-times"></i> Personal Trainer</li>
+                        <li><i class="fas fa-times"></i> Locker Access</li>
+                    </ul>
+                    <button class="cta-button">Get Started</button>
+                </div>
+                <div class="pricing-card featured animate-on-scroll">
+                    <h3>Premium</h3>
+                    <div class="price">₹7500<span>/month</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Full Gym Access</li>
+                        <li><i class="fas fa-check"></i> Unlimited Classes</li>
+                        <li><i class="fas fa-check"></i> 2 Training Sessions</li>
+                        <li><i class="fas fa-check"></i> Locker Access</li>
+                        <li><i class="fas fa-check"></i> Nutrition Consultation</li>
+                    </ul>
+                    <button class="cta-button">Get Started</button>
+                </div>
+                <div class="pricing-card animate-on-scroll">
+                    <h3>Elite</h3>
+                    <div class="price">₹14000<span>/month</span></div>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> 24/7 Gym Access</li>
+                        <li><i class="fas fa-check"></i> Unlimited Classes</li>
+                        <li><i class="fas fa-check"></i> 8 Training Sessions</li>
+                        <li><i class="fas fa-check"></i> Premium Locker</li>
+                        <li><i class="fas fa-check"></i> Prince's Nutrition Plan</li>
+                    </ul>
+                    <button class="cta-button">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Success Stories</p>
+                <h2 class="section-title">Member Testimonials</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="quote">"</div>
+                    <p class="testimonial-text">Prince Tiwari Fitness transformed my life. I lost 50 pounds in 6 months with Prince's personalized training program. His approach is simply revolutionary!</p>
+                    <div class="client">
+                        <div class="client-img">RS</div>
+                        <div class="client-info">
+                            <h4>Aniket Singh</h4>
+                            <p>Member for 2 years</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="quote">"</div>
+                    <p class="testimonial-text">The nutrition plan designed by Prince helped me overcome my health issues. I've never felt better in my life. Thank you Prince Tiwari!</p>
+                    <div class="client">
+                        <div class="client-img">MJ</div>
+                        <div class="client-info">
+                            <h4>Pushpendra Kushwaha</h4>
+                            <p>Member for 1 year</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="quote">"</div>
+                    <p class="testimonial-text">As a professional athlete, I've trained at many facilities, but Prince Tiwari's approach to functional training is unparalleled. Highly recommended!</p>
+                    <div class="client">
+                        <div class="client-img">DW</div>
+                        <div class="client-info">
+                            <h4>Vaibhav Katiyar</h4>
+                            <p>Member for 2 years</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll">
+                    <div class="quote">"</div>
+                    <p class="testimonial-text">As a professional athlete, I've trained at many facilities, but Prince Tiwari's approach to functional training is unparalleled. Highly recommended!</p>
+                    <div class="client">
+                        <div class="client-img">DW</div>
+                        <div class="client-info">
+                            <h4>Tanu Rai</h4>
+                            <p>Member for 1.5 years</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <h1>PRINCE TIWARI FITNESS</h1>
+                    </div>
+                    <p style="color: #aaa; margin-top: 20px; line-height: 1.6;">Prince Tiwari Fitness is dedicated to helping you achieve your fitness goals with top-notch facilities, expert trainers, and a supportive community.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100018404438643"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/prince_tiwari_360/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/PrinceTiwariBR/with_replies"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Prince</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Personal Training</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Group Classes</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Strength Training</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cardio Programs</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Nutrition Plans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Greater Noida</li>
+                        <li><i class="fas fa-phone"></i> 6203811578</li>
+                        <li><i class="fas fa-envelope"></i> tiwariprince340@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 5:00 AM - 11:00 PM</li>
+                        <li><i class="fas fa-clock"></i> Sat-Sun: 7:00 AM - 9:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Prince Tiwari Fitness. All Rights Reserved. Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> for fitness enthusiasts.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.background = 'rgba(18, 18, 18, 0.98)';
+            } else {
+                header.style.padding = '15px 0';
+                header.style.background = 'rgba(18, 18, 18, 0.95)';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                navMenu.classList.remove('show');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Auto-rotate testimonials
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-card');
+        
+        function rotateTestimonials() {
+            testimonials.forEach(testimonial => testimonial.style.display = 'none');
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            testimonials[currentTestimonial].style.display = 'block';
+        }
+        
+        // Set initial display
+        testimonials.forEach((testimonial, index) => {
+            if (index !== 0) testimonial.style.display = 'none';
+        });
+        
+        // Start rotation
+        setInterval(rotateTestimonials, 5000);
+    </script>
+</body>
+</html>
